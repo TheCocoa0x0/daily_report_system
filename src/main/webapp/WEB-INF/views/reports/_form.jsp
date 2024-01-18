@@ -21,6 +21,16 @@
 <c:out value="${sessionScope.login_employee.name}" />
 <br /><br />
 
+<fmt:parseDate value="${report.startTime}" var="startTime" type="time" pattern='HH:mm:ss'/>
+<label for="${AttributeConst.REP_START.getValue()}">出勤時間</label><br />
+<input type="time" step="1" name="${AttributeConst.REP_START.getValue()}" id="${AttributeConst.REP_START.getValue()}" value="<fmt:formatDate value='${startTime}' pattern='HH:mm:ss' />" />
+<br /><br />
+
+<fmt:parseDate value="${report.endTime}" var="endTime" type="time" pattern='HH:mm:ss'/>
+<label for="${AttributeConst.REP_END.getValue()}">退勤時間</label><br />
+<input type="time" step="1" name="${AttributeConst.REP_END.getValue()}" id="${AttributeConst.REP_END.getValue()}" value="<fmt:formatDate value='${endTime}' pattern='HH:mm:ss' />" />
+<br /><br />
+
 <label for="${AttributeConst.REP_TITLE.getValue()}">タイトル</label><br />
 <input type="text" name="${AttributeConst.REP_TITLE.getValue()}" id="${AttributeConst.REP_TITLE.getValue()}" value="${report.title}" />
 <br /><br />
